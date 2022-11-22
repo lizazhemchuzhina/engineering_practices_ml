@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "liza_knn"
+version = "0.1.0"
+description = "hw2 eng practices "
+authors = ["Zhemchuzhina Elizaveta <lizazhemchuzhina@mail.ru>"]
+readme = "README.md"
+repository = "https://github.com/lizazhemchuzhina/engineering_practices_ml"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+numpy = "1.21.2"
+matplotlib = "3.5.1"
+pandas="1.5.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
