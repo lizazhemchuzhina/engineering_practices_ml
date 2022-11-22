@@ -1,6 +1,6 @@
 import numpy as np
-from utils.data_processing import read_cancer_dataset, train_test_split, read_spam_dataset
-from utils.plots import plot_precision_recall, plot_roc_curve
+from src.utils.data_processing import read_cancer_dataset, train_test_split, read_spam_dataset
+from src.utils.plots import plot_precision_recall, plot_roc_curve
 
 
 def main():

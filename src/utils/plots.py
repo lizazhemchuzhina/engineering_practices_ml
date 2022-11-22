@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from utils.metrics import get_precision_recall_accuracy
+from src.utils.metrics import get_precision_recall_accuracy
 from model.KNearest_classifier import KNearest
 
 
