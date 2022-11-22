@@ -1,18 +1,18 @@
 # engineering_practices_ml
 
-## Установка пакетного менеджера (poetry)
+## Установка пакетного менеджера
 
 ```shell
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
-## Развёртывание окружения:
-1) prod
+## Развёртывание окружения
+1) dev
 
 ```shell
 poetry install
 ```
-2) dev
+2) prod
 
 ```shell
 poetry install --without dev
