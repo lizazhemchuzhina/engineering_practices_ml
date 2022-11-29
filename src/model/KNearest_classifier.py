@@ -1,9 +1,8 @@
-from typing import NoReturn, List
+from typing import List, NoReturn
 
 import numpy as np
 
 from model.KD_tree import KDTree
-
 
 
 class KNearest:
@@ -22,27 +21,27 @@ class KNearest:
         self.leaf_size = leaf_size
         self.tree = None
 
-    def fit(self, X: np.array, y: np.array) -> NoReturn:
+    def fit(self, x_fit: np.array, y_fit: np.array) -> NoReturn:
         """
 
         Parameters
         ----------
-        X : np.array
+        x_fit : np.array
             Набор точек, по которым строится классификатор.
-        y : np.array
+        y_fit : np.array
             Метки точек, по которым строится классификатор.
 
         """
-        self.tree = KDTree(X, self.leaf_size)
-        self.labels = y
+        self.tree = KDTree(x_fit, self.leaf_size)
+        self.labels = y_fit
         self.classes_number = len(np.unique(self.labels))
 
-    def predict_proba(self, X: np.array) -> List[np.array]:
+    def predict_proba(self, x_fit: np.array) -> List[np.array]:
         """
 
         Parameters
         ----------
-        X : np.array
+        x_fit : np.array
             Набор точек, для которых нужно определить класс.
 
         Returns
@@ -54,19 +53,23 @@ class KNearest:
 
         """
         result = []
-        for neighbors in self.tree.query(X, self.n_neighbors):
+        for neighbors in self.tree.query(x_fit, self.n_neighbors):
             class_probability = [0.0] * self.classes_number
             for i in range(self.classes_number):
-                class_probability[i] = np.mean(np.array([int(self.labels[neighbor] == i) for neighbor in neighbors]))
+                class_probability[i] = np.mean(
+                    np.array(
+                        [int(self.labels[neighbor] == i) for neighbor in neighbors]
+                    )
+                )
             result.append(np.array(class_probability))
         return result
 
-    def predict(self, X: np.array) -> np.array:
+    def predict(self, x_pred: np.array) -> np.array:
         """
 
         Parameters
         ----------
-        X : np.array
+        x_pred : np.array
             Набор точек, для которых нужно определить класс.
 
         Returns
@@ -76,4 +79,4 @@ class KNearest:
 
 
         """
-        return np.argmax(np.array(self.predict_proba(X)), axis=1)
+        return np.argmax(np.array(self.predict_proba(x_pred)), axis=1)

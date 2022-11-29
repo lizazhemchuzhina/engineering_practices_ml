@@ -1,0 +1,26 @@
+src/model/KNearest_classifier.py:24:19: VNE001 single letter variable names like 'X' are not allowed
+src/model/KNearest_classifier.py:24:32: VNE001 single letter variable names like 'y' are not allowed
+src/model/KNearest_classifier.py:39:29: VNE001 single letter variable names like 'X' are not allowed
+src/model/KNearest_classifier.py:67:23: VNE001 single letter variable names like 'X' are not allowed
+src/model/KD_tree.py:21:24: VNE001 single letter variable names like 'X' are not allowed
+src/model/KD_tree.py:39:9: VNE001 single letter variable names like 'X' are not allowed
+src/model/KD_tree.py:42:21: VNE001 single letter variable names like 'X' are not allowed
+src/model/KD_tree.py:46:9: VNE001 single letter variable names like 'X' are not allowed
+src/model/KD_tree.py:50:39: E203 whitespace before ':'
+src/model/KD_tree.py:56:21: VNE001 single letter variable names like 'X' are not allowed
+src/model/KD_tree.py:56:34: VNE001 single letter variable names like 'k' are not allowed
+src/model/KD_tree.py:83:50: VNE001 single letter variable names like 'k' are not allowed
+src/model/KD_tree.py:103:59: VNE001 single letter variable names like 'k' are not allowed
+src/utils/data_processing.py:34:5: VNE001 single letter variable names like 'y' are not allowed
+src/utils/data_processing.py:35:5: VNE001 single letter variable names like 'X' are not allowed
+src/utils/data_processing.py:58:5: VNE001 single letter variable names like 'y' are not allowed
+src/utils/data_processing.py:59:5: VNE001 single letter variable names like 'X' are not allowed
+src/utils/data_processing.py:64:5: VNE001 single letter variable names like 'X' are not allowed
+src/utils/data_processing.py:64:18: VNE001 single letter variable names like 'y' are not allowed
+src/utils/metrics.py:42:13: VNE001 single letter variable names like 'j' are not allowed
+src/utils/plots.py:14:9: VNE001 single letter variable names like 'k' are not allowed
+src/utils/plots.py:19:13: VNE001 single letter variable names like 'c' are not allowed
+src/utils/plots.py:24:14: VNE001 single letter variable names like 'x' are not allowed
+src/utils/plots.py:48:9: VNE001 single letter variable names like 'k' are not allowed
+src/utils/plots.py:55:13: VNE001 single letter variable names like 'w' are not allowed
+src/utils/plots.py:68:19: VNE001 single letter variable names like 'c' are not allowed

@@ -1,11 +1,11 @@
-
 from typing import Tuple
 
 import numpy as np
 
 
-def get_precision_recall_accuracy(y_pred: np.array, y_true: np.array
-                                  ) -> Tuple[np.array, np.array, float]:
+def get_precision_recall_accuracy(
+    y_pred: np.array, y_true: np.array
+) -> Tuple[np.array, np.array, float]:
     """
 
     Parameters
@@ -39,12 +39,12 @@ def get_precision_recall_accuracy(y_pred: np.array, y_true: np.array
         tp = 0
         fp = 0
         fn = 0
-        for j in range(0, len(y_pred)):
-            if y_true[j] == cur and y_pred[j] == cur:
+        for iteration_ in range(0, len(y_pred)):
+            if y_true[iteration_] == cur and y_pred[iteration_] == cur:
                 tp += 1
-            if y_true[j] != cur and y_pred[j] == cur:
+            if y_true[iteration_] != cur and y_pred[iteration_] == cur:
                 fp += 1
-            if y_true[j] == cur and y_pred[j] != cur:
+            if y_true[iteration_] == cur and y_pred[iteration_] != cur:
                 fn += 1
         precision.append(tp / (tp + fp) if tp + fp != 0 else 0)
         recall.append(tp / (tp + fn) if tp + fn != 0 else 0)
