@@ -6,7 +6,6 @@ src/model/KD_tree.py:21:24: VNE001 single letter variable names like 'X' are not
 src/model/KD_tree.py:39:9: VNE001 single letter variable names like 'X' are not allowed
 src/model/KD_tree.py:42:21: VNE001 single letter variable names like 'X' are not allowed
 src/model/KD_tree.py:46:9: VNE001 single letter variable names like 'X' are not allowed
-src/model/KD_tree.py:50:39: E203 whitespace before ':'
 src/model/KD_tree.py:56:21: VNE001 single letter variable names like 'X' are not allowed
 src/model/KD_tree.py:56:34: VNE001 single letter variable names like 'k' are not allowed
 src/model/KD_tree.py:83:50: VNE001 single letter variable names like 'k' are not allowed
