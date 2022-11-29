@@ -5,6 +5,7 @@ import numpy as np
 from model.KD_tree import KDTree
 
 
+
 class KNearest:
     def __init__(self, n_neighbors: int = 5, leaf_size: int = 30):
         """

@@ -9,6 +9,7 @@ class Point:
         self.datum = datum
 
 
+
 class Node:
     def __init__(self, left_son, right_son, data, is_leaf):
         self.left_son = left_son
