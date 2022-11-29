@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "liza_knn"
+version = "0.1.0"
+description = "hw2 eng practices "
+authors = ["Zhemchuzhina Elizaveta <lizazhemchuzhina@mail.ru>"]
+readme = "README.md"
+repository = "https://github.com/lizazhemchuzhina/engineering_practices_ml"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+numpy = "1.21.2"
+matplotlib = "3.5.1"
+pandas="1.5.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "22.10.0"
+isort = "5.10.1"
+flake8 = "5.0.4"
+Flake8-pyproject = "1.2.1"
+flake8-simplify = "0.19.3"
+flake8-return = "1.2.0"
+flake8-functions = "0.0.7"
+flake8-variables-names = "0.0.2"
+flake8-unused-arguments = "0.0.12"
+pre-commit = "2.20.0"
+
+[tool.flake8]
+ignore = ['E203','W503']
+max-line-length = 88
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
