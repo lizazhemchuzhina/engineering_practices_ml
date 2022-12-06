@@ -1,0 +1,4 @@
+outs:
+- md5: 87555d8953c07f1095bfa90d61061f4a
+  size: 49680
+  path: cancer_roc.png
