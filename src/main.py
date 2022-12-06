@@ -1,5 +1,7 @@
 import numpy as np
-from src.utils.data_processing import read_cancer_dataset, train_test_split, read_spam_dataset
+
+from src.utils.data_processing import (read_cancer_dataset, read_spam_dataset,
+                                       train_test_split)
 from src.utils.plots import plot_precision_recall, plot_roc_curve
 
 
@@ -23,5 +25,5 @@ def main():
     plot_roc_curve(X_train, y_train, X_test, y_test, max_k=20)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
