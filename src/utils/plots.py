@@ -5,7 +5,7 @@ from model.KNearest_classifier import KNearest
 from src.utils.metrics import get_precision_recall_accuracy
 
 
-def plot_precision_recall(X_train, y_train, X_test, y_test, max_k=30):
+def plot_precision_recall(X_train, y_train, X_test, y_test, path, max_k=30):
     ks = list(range(1, max_k + 1))
     classes = len(np.unique(list(y_train) + list(y_test)))
     precisions = [[] for _ in range(classes)]
@@ -21,7 +21,7 @@ def plot_precision_recall(X_train, y_train, X_test, y_test, max_k=30):
             recalls[class_].append(recall[class_])
         accuracies.append(acc)
 
-    def plot(x_data, ys, ylabel, legend=True):
+    def plot(x_data, ys, ylabel, path_, legend=True):
         plt.figure(figsize=(12, 3))
         plt.xlabel("K")
         plt.ylabel(ylabel)
@@ -32,14 +32,18 @@ def plot_precision_recall(X_train, y_train, X_test, y_test, max_k=30):
         if legend:
             plt.legend()
         plt.tight_layout()
+        plt.savefig(path_)
         plt.show()
 
-    plot(ks, recalls, "Recall")
-    plot(ks, precisions, "Precision")
-    plot(ks, [accuracies], "Accuracy", legend=False)
+    path_recall = path + "_recall.png"
+    plot(ks, recalls, "Recall", path_recall)
+    path_precision = path + "_prec.png"
+    plot(ks, precisions, "Precision", path_precision)
+    path_accur = path + "_acc.png"
+    plot(ks, [accuracies], "Accuracy", path_accur, legend=False)
 
 
-def plot_roc_curve(X_train, y_train, X_test, y_test, max_k=30):
+def plot_roc_curve(X_train, y_train, X_test, y_test, path, max_k=30):
     positive_samples = sum(1 for y in y_test if y == 0)
     ks = list(range(1, max_k + 1))
     curves_tpr = []
@@ -73,4 +77,5 @@ def plot_roc_curve(X_train, y_train, X_test, y_test, max_k=30):
     plt.xlim(-0.01, 1.01)
     plt.ylim(-0.01, 1.01)
     plt.tight_layout()
+    plt.savefig(path)
     plt.show()
