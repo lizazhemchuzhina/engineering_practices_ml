@@ -1,0 +1,4 @@
+outs:
+- md5: cc04f1f7a2d3c9a6ef4bf5f1323dab08
+  size: 29420
+  path: cancer_prec_prec.png

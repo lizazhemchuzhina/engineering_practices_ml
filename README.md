@@ -1,6 +1,6 @@
 # engineering_practices_ml
-## Для запуска:
-```shell
-cd src
-python3 main.py
-```
+Используется DVC
+## Ссылка на хранилище:
+
+https://drive.google.com/drive/folders/17nJZGWKzyW8lqndpPAdX1xSN--inInmR
+

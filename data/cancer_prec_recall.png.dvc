@@ -1,0 +1,4 @@
+outs:
+- md5: 8b7da5bec339fb1a723d3339b3b21430
+  size: 22452
+  path: cancer_prec_recall.png
