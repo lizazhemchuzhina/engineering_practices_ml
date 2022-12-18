@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/utils/data_processing.py src/datasets/cancer.csv data/prepared
+    deps:
+    - path: src/datasets/cancer.csv
+      md5: 6b188f6ac0779f8ea59065e795e31e4c
+      size: 119976
+    - path: src/utils/data_processing.py
+      md5: 02bef1eb5aaef6f35937f64942737a2e
+      size: 2929
+    outs:
+    - path: data/prepared
+      md5: 317f504a1480d3bfffe60934b7b4b715.dir
+      size: 141624
+      nfiles: 4
+  run:
+    cmd: python src/main.py data/prepared
+    deps:
+    - path: data/prepared
+      md5: 317f504a1480d3bfffe60934b7b4b715.dir
+      size: 141624
+      nfiles: 4
+    - path: src/main.py
+      md5: 83620e8e0e8af87fe2ef626c378bcc52
+      size: 1028

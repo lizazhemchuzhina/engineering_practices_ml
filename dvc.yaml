@@ -1,0 +1,13 @@
+stages:
+  prepare:
+    cmd: python src/utils/data_processing.py src/datasets/cancer.csv data/prepared
+    deps:
+    - src/utils/data_processing.py
+    - src/datasets/cancer.csv
+    outs:
+    - data/prepared
+  run:
+    cmd: python src/main.py data/prepared
+    deps:
+    - src/main.py
+    - data/prepared
