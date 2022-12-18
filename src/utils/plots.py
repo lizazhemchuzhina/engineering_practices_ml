@@ -5,8 +5,10 @@ from model.KNearest_classifier import KNearest
 from src.utils.metrics import get_precision_recall_accuracy
 
 
-def plot_precision_recall(X_train, y_train, X_test, y_test, path, max_k=30):
-    ks = list(range(1, max_k + 1))
+def plot_precision_recall(X_train, y_train, X_test, y_test, max_k=30):
+    path = "/home/lizazhemchuzhina/PycharmProjects/" \
+           "engineering_practices_ml/data/cancer_prec"
+    ks = [i for i in range(1, max_k)]
     classes = len(np.unique(list(y_train) + list(y_test)))
     precisions = [[] for _ in range(classes)]
     recalls = [[] for _ in range(classes)]
@@ -43,9 +45,11 @@ def plot_precision_recall(X_train, y_train, X_test, y_test, path, max_k=30):
     plot(ks, [accuracies], "Accuracy", path_accur, legend=False)
 
 
-def plot_roc_curve(X_train, y_train, X_test, y_test, path, max_k=30):
+def plot_roc_curve(X_train, y_train, X_test, y_test, max_k=30):
+    path = "/home/lizazhemchuzhina/PycharmProjects/" \
+           "engineering_practices_ml/data/cancer_roc.png"
     positive_samples = sum(1 for y in y_test if y == 0)
-    ks = list(range(1, max_k + 1))
+    ks = [i for i in range(1, max_k)]
     curves_tpr = []
     curves_fpr = []
     colors = []

@@ -1,8 +1,10 @@
 import math
+import sys
 from typing import Tuple
 
 import numpy as np
 import pandas as pd
+import os
 
 
 def read_cancer_dataset(path_to_csv: str) -> Tuple[np.array, np.array]:
@@ -61,7 +63,7 @@ def read_spam_dataset(path_to_csv: str) -> Tuple[np.array, np.array]:
 
 
 def train_test_split(
-    x_data: np.array, y_data: np.array, ratio: float
+        x_data: np.array, y_data: np.array, ratio: float
 ) -> Tuple[np.array, np.array, np.array, np.array]:
     """
 
@@ -93,3 +95,19 @@ def train_test_split(
         x_data[size_train:],
         y_data[size_train:],
     )
+
+
+def main(input_, output_):
+    X, y = read_cancer_dataset(input_)
+    X_train, y_train, X_test, y_test = train_test_split(X, y, 0.9)
+    os.makedirs(output_, exist_ok=True)
+    np.save(f"{output_}/X_train", X_train)
+    np.save(f"{output_}/X_test", X_test)
+    np.save(f"{output_}/y_train", y_train)
+    np.save(f"{output_}/y_test", y_test)
+
+
+if __name__ == "__main__":
+    input_ = sys.argv[1]
+    output_ = sys.argv[2]
+    main(input_, output_)
